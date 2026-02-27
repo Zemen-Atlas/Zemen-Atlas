@@ -210,11 +210,6 @@ Zemen-Atlas/
 
 ---
 
-## 📸 Screenshots
-
-> *Screenshots coming soon - Contributions welcome!*
-
----
 
 ## 🤝 Contributing
 
@@ -244,14 +239,6 @@ This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) 
 
 ---
 
-## 🙏 Acknowledgments
-
-- Ethiopian Historical Society
-- Contributors from the Ethiopian developer community
-- Open source libraries and frameworks
-- Historical researchers and scholars
-
----
 
 ## 🔗 Related Projects & Resources
 
@@ -260,11 +247,6 @@ This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) 
 - [Ethiopian Monarchy](https://en.wikipedia.org/wiki/Solomonid_dynasty)
 
 ---
-
-## 📧 Contact
-
-- **GitHub**: [@yoni-crypto](https://github.com/yoni-crypto)
-- **Project Link**: https://github.com/yoni-crypto/Zemen-Atlas
 
 ---
 
