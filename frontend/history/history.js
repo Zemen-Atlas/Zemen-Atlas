@@ -15,7 +15,7 @@ function loadData() {
     fetch(`${API_BASE_URL}/places`).then(res => res.json()),
     fetch(`${API_BASE_URL}/battles`).then(res => res.json()),
     fetch(`${API_BASE_URL}/people`).then(res => res.json())
-  ]).then(function (results) { // result is array [ruler,places,..]
+  ]).then(function (results) { // result is array [rulerdata,places,..]
     state.rulers = results[0];
     state.places = results[1];
     state.battles = results[2];
@@ -38,7 +38,7 @@ function getAllEntities() { //this for  combining all the data
   var all = [];
   state.rulers.forEach(function (r) {
     all.push(Object.assign({}, r, { type: "ruler", displayYear: getEntityYear(r) }));
-  });
+  });  // target , source1 , source 2
   state.places.forEach(function (p) {
     all.push(Object.assign({}, p, { type: "place", displayYear: getEntityYear(p) }));
   });
@@ -56,6 +56,7 @@ function getAllEntities() { //this for  combining all the data
 
 function getFilteredEntities() {
   var all = getAllEntities();
+  //if we have search box
   var q = (state.searchQuery || "").toLowerCase().trim();
   if (q) {
     all = all.filter(function (e) {
@@ -74,8 +75,8 @@ function getFilteredEntities() {
 }
 
 function getTypeLabel(entity) {
-  if (entity.type === "ruler") return "Ruler";
-  if (entity.type === "place") return entity.type || "Place";
+  if (entity.type === "ruler") return "Ruler"; //return string
+  if (entity.type === "place") return "Place";
   if (entity.type === "battle") return "Battle";
   if (entity.type === "person") return entity.title || "Person";
   return "Entry";
@@ -92,7 +93,7 @@ function renderTimeline() {
   var entities = getFilteredEntities();
 
   if (entities.length === 0) {
-    list.innerHTML = '<div class="timeline-empty">No entries match the current filter or search.</div>';
+    list.innerHTML = '<div class="timeline-empty">No entries match the current filter</div>';
     return;
   }
 

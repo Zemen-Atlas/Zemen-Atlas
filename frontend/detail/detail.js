@@ -5,8 +5,12 @@ document.addEventListener('DOMContentLoaded', function() {
   if (cartCountEl) cartCountEl.textContent = count;
 });   // for cart count 
 
+//to know what entity to load
+
+// link eg   
+// https://history-timeline1.vercel.app/detail/?type=place&id=p29
 function getParams() {
-  var search = window.location.search.slice(1);
+  var search = window.location.search.slice(1);  //?type=place&id=p29
   var params = {};
   search.split("&").forEach(function (pair) {
     var parts = pair.split("=");
@@ -33,6 +37,8 @@ function loadData() {
   });
 }
 
+
+//based on type and id find correct history item
 function findEntity(data, type, id) {
   if (type === "ruler") {
     var r = data.rulers.filter(function (x) { return x.id === id; })[0];
@@ -136,6 +142,8 @@ function renderSummary(entity) {
   );
 }
 
+
+//summary and wekipidia
 function showTab(tab) {
   var contentEl = document.getElementById("detail-content");
   var wikiEl = document.getElementById("detail-wikipedia");
